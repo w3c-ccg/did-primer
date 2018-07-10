@@ -1,3 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A Primer for Decentralized Identifiers</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <!--
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script type="text/javascript" class="remove">
+      var respecConfig = {
+        // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+        specStatus: "CG-DRAFT",
+
+        // the specification's short name, as in http://www.w3.org/TR/short-name/
+        shortName: "did-primer",
+
+        // subtitle
+        subtitle: "Everything you wanted to know about DIDs",
+
+        // if you wish the publication date to be other than today, set this
+        // publishDate:  "2009-08-06",
+
+        // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+        // and its maturity status
+        // previousPublishDate:  "1977-03-15",
+        // previousMaturity:  "WD",
+
+        // extend the bibliography entries
+        //localBiblio: ccg.localBiblio,
+
+        github: "https://github.com/w3c-ccg/did-primer/",
+        includePermalinks: false,
+
+        // if there a publicly available Editor's Draft, this is the link
+        edDraftURI: "https://w3c-ccg.github.io/did-primer/",
+
+        // if this is a LCWD, uncomment and set the end of its review period
+        // lcEnd: "2009-08-05",
+
+        // editors, add as many as you like
+        // only "name" is required
+        editors: [
+          { name: "Andrew Hughes", url: "https://idimmusings.com/",
+            company: "ITIM Consulting", companyURL: "https://idimmusings.com/" },
+          { name: "Manu Sporny", url: "http://manu.sporny.org/",
+            company: "Digital Bazaar", companyURL: "https://digitalbazaar.com/" },
+          { name: "Drummond Reed", url: "https://www.linkedin.com/in/drummondreed/",
+            company: "Evernym", companyURL: "https://evernym.com/"}
+        ],
+
+        // authors, add as many as you like.
+        // This is optional, uncomment if you have authors as well as editors.
+        // only "name" is required. Same format as editors.
+        authors: [
+          { name: "Credentials Community Group", url: "https://w3c-ccg.github.io/",
+            company: "W3C", companyURL: "https://www.w3.org/" }
+        ],
+
+        // name of the WG
+        wg:           "Credentials Community Group",
+
+        // URI of the public WG page
+        wgURI:        "https://www.w3.org/community/credentials/",
+
+        // name (with the @w3c.org) of the public mailing to which comments are due
+        wgPublicList: "public-credentials",
+
+        // URI of the patent status for this WG, for Rec-track documents
+        // !!!! IMPORTANT !!!!
+        // This is important for Rec-track documents, do not copy a patent URI from a random
+        // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+        // Team Contact.
+        wgPatentURI:  "https://www.w3.org/community/about/agreements/cla/",
+        maxTocLevel: 4,
+        inlineCSS: true
+      };
+    </script>
+  </head>
+  <body>
+    <section id='abstract'>
+      <p>
+Abstract TBD.
+      </p>
+    </section>
+
+<section id='sotd'>
+<p>
+Comments regarding this document are welcome. Please file issues
+directly on <a href="https://github.com/w3c-ccg/did-primer/issues/">GitHub</a>,
+or send them to
+<a href="mailto:public-credentials@w3.org">public-credentials@w3.org</a>
+(<a href="mailto:public-credentials-request@w3.org?subject=subscribe">subscribe</a>,
+<a href="https://lists.w3.org/Archives/Public/public-credentials/">archives</a>).
+</p>
+
+<p>
+Portions of the work on this specification have been funded by the
+United States Department of Homeland Security's Science and Technology
+Directorate under contracts HSHQDC-16-R00012-H-SB2016-1-002 and
+HSHQDC-17-C-00019. The content of this specification does not necessarily
+reflect the position or the policy of the U.S. Government and no official
+endorsement should be inferred.
+</p>
+
+<p class="issue">
+Names in this section need to be updated:
+
+Work on this specification has also been supported by the Rebooting the
+Web of Trust community facilitated by Christopher Allen, Shannon Appelcline,
+Kiara Robles, Brian Weller, Betty Dhamers, Kaliya Young, Manu Sporny,
+Drummond Reed, and Joe Andrieu.
+</p>
+
+</section>
+
+
+<section>
+<h1>Introduction</h1>
+<p>
+Introduction TBD
+</p>
+<p class="issue">
+*** Testing to see what happens if I just paste the .md content here ***
+</p>
 <h1 id="did-primer-spring-2018">DID Primer Spring 2018</h1>
 <p><em>This is a community document maintained by co-editors Drummond Reed and Manu Sporny and other contributors and implementers of the</em> <a href="https://w3c-ccg.github.io/did-spec/"><strong>Decentralized Identifier 1.0 specification</strong></a><em>.</em></p>
 <h2 id="introduction">Introduction</h2>
@@ -30,9 +157,9 @@
 <p>For blockchain identity -- and more specifically <strong>self-sovereign identity</strong>, which can be defined as a lifetime portable digital identity that does not depend on any centralized authority -- we need a new class of identifier that fulfills all four requirements: persistence, global resolvability, cryptographic verifiability, and decentralization.</p>
 <h2 id="the-format-of-a-did">The Format of a DID</h2>
 <p>In 2016 the developers of the DID specification agreed with a suggestion from Christopher Allen that DIDs could be adapted to work with multiple blockchains by following the same basic pattern as the URN specification:</p>
-<p><img src="../supporting-files/paper-images/did-primer-1.png" /></p>
+<p><img src="./supporting-files/paper-images/did-primer-1.png" /></p>
 <p>The key difference is that with DIDs the namespace component identifies a <strong>DID method</strong>, and a <strong>DID method specification</strong> specifies the format of the method-specific identifier.</p>
-<p><img src="../supporting-files/paper-images/did-primer-2.png" /></p>
+<p><img src="./supporting-files/paper-images/did-primer-2.png" /></p>
 <p>DID methods (further explained below) define how DIDs work with a specific blockchain. All DID method specs must define the format and generation of the method-specific identifier. Note that the method specific identifier string <strong>must</strong> be unique in the namespace of that DID method. For example the DID above uses the Sovrin DID method in which the method-specific identifier is generated by base-56-encoding the first half of an Ed25519 verification key.</p>
 <h2 id="did-documents">DID Documents</h2>
 <p>DID infrastructure can be thought of as a global <a href="https://en.wikipedia.org/wiki/Key-value_database"><em>key-value database</em></a> in which the database is all DID-compatible blockchains, distributed ledgers, or decentralized networks. In this virtual database, the key is a DID, and the value is a <strong>DID document</strong>. The purpose of the DID document is to describe the public keys, authentication protocols, and service endpoints necessary to bootstrap cryptographically-verifiable interactions with the identified entity.</p>
@@ -92,7 +219,7 @@
 <h2 id="dids-and-verifiable-claims">DIDs and Verifiable Claims</h2>
 <p>DIDs are only the base layer of decentralized identity infrastructure. The next higher layer -- where most of the value is unlocked -- is <strong>verifiable claims</strong>. This is the technical term for a digitally signed electronic credential that conforms to the interoperability standards being developed by the <a href="https://www.w3.org/2017/vc/charter.html"><em>W3C Verifiable Claims Working Group</em></a>. For a complete introduction, please see the <a href="https://github.com/WebOfTrustInfo/rebooting-the-web-of-trust-fall2017/blob/master/topics-and-advance-readings/verifiable-claims-primer.md"><em>Verifiable Claims Primer</em></a>.</p>
 <p>The diagram below (from Manu Sporny) illustrates the three primary roles in the verifiable claims ecosystem: <strong>issuers</strong> sign claims and give them to <strong>holders</strong> (identity owners) who present them to <strong>verifiers</strong> who verify the signatures in order to grant access to resources.</p>
-<p><img src="../supporting-files/paper-images/did-primer-3.png" /></p>
+<p><img src="./supporting-files/paper-images/did-primer-3.png" /></p>
 <p>Note that in all three cases, the parties interact with the DID layer to register DIDs as persistent identifiers for issuers or holders, and to resolve those DIDs to obtain the public keys needed to verify the signature of an issuer or holder. Since any issuer may provide claims to any holder who may present them to any verifier, this results in set of rich, interlocking trust relationships that do not need to conform to any pre-established hierarchy -- a <strong>web of trust</strong>.</p>
 <h2 id="appendix-a-did-community-resources">Appendix A: DID Community Resources</h2>
 <p>Besides the links throughout this primer, these additional resources are available to anyone interested in joining the DID community.</p>
@@ -103,3 +230,11 @@
 <li><p><a href="http://www.weboftrust.info/"><em>Rebooting the Web of Trust event</em></a> (held every six months)</p></li>
 <li><p><a href="http://www.internetidentityworkshop.com/"><em>Internet Identity Workshop event</em></a> (held every six months)</p></li>
 </ul>
+
+
+
+</p>
+</section>
+
+</body>
+</html>
