@@ -1,4 +1,4 @@
 # Primer for Decentralized Identifiers
 
-This document is a primer for decentralized identifiers.
+This [document](https://w3c-ccg.github.io/did-primer/) is a primer for decentralized identifiers.
 
