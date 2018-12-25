@@ -199,18 +199,19 @@ to the concept of Decentralized Identifiers.
     and more recently by <a href=
     "https://tools.ietf.org/html/rfc8141"><em>RFC
     8141</em></a>.</p>
-    <p>As a rule, however, UUIDs are not globally resolvable and
-    URNs – if resolvable – require a centralized registration
-    authority. In addition, neither UUIDs or URNs inherently
-    address a third characteristic – the ability to
+    <p>One might ask why do we need DIDs when standards like UUIDs and
+    URNs already exist. Answer to this question lies in the concept of
+    <strong>self-sovereign identity</strong>. For self-sovereign identity,
+    which can be defined as a lifetime portable digital identity that does
+    not depend on any centralized authority, we need an identifier that
+    has four major characteristics: persistence, global resolvability,
+    cryptographic verifiability, and decentralization.</p>
+    <p>Unfortunately UUIDs and URNs do not fit that bill. As a rule UUIDs
+    are not globally resolvable and URNs – if resolvable – require a
+    centralized registration authority. In addition, neither UUIDs or URNs
+    inherently address a third characteristic that we desire – the ability to
     <strong>cryptographically verify ownership of the
     identifier</strong>.</p>
-    <p>For <strong>self-sovereign identity</strong>, which can be
-    defined as a lifetime portable digital identity that does not
-    depend on any centralized authority, we need a new class of
-    identifier that fulfills all four requirements: persistence,
-    global resolvability, cryptographic verifiability, and
-    decentralization.</p>
   </section>
   <section>
     <h2 id="the-format-of-a-did">The Format of a DID</h2>
